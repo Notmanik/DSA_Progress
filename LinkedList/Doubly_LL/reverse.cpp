@@ -101,7 +101,7 @@ public:
     {
         if (!head)
         {
-            cout << "Empty List" \n;
+            cout << "Empty List";
             return;
         } // Empty list check
 
