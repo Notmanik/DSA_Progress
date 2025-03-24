@@ -24,16 +24,27 @@ int max_house(vector<int> &house,int n,vector<int> & dp){
     }
     return dp[n-1];
 }
-//? using memoization
-
+//? if the houses are in circle
+int robLinear(vector<int>& nums, int start, int end) {
+    int prev2 = 0, prev1 = 0;
+    for (int i = start; i <= end; i++) {
+        int take = nums[i] + prev2;
+        int notTake = prev1;
+        int cur = max(take, notTake);
+        prev2 = prev1;
+        prev1 = cur;
+    }
+    return prev1;
+}
 // Main function
 int main() {
     ios_base::sync_with_stdio(0); cin.tie(0);
     int n;cin>>n;
-    vector<int> house(n);
+    vector<int> nums(n);
     vector<int> dp(n);
-    for(auto & x: house) cin>>x;
-    cout<<"The maximum ammount the robber can steal is :"<<max_house(house,n,dp)<<endl;
-    print_vec(dp);
+    for(auto & x: nums) cin>>x;
+    // cout<<"The maximum ammount the robber can steal is :"<<max_house(nums,n,dp)<<endl;
+    // print_vec(dp);
+    cout<<"The solution for the problem 2 is :"<<max(robLinear(nums, 0, n - 2), robLinear(nums, 1, n - 1));
     return 0;
 }
