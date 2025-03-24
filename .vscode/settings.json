@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "files.associations": {
         "*.sqlbook": "sql",
         "*.ndjson": "jsonl",
@@ -8,4 +9,7 @@
         "vector": "cpp",
         "xstring": "cpp"
     }
+=======
+    "C_Cpp.errorSquiggles": "disabled"
+>>>>>>> b00d82f7506f58dd9a8e0f99748117a7b94ec73d
 }
